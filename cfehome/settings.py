@@ -83,6 +83,8 @@ WSGI_APPLICATION = 'cfehome.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -96,16 +98,11 @@ DATABASES = {
         }
     }
 }
+"""
 
-# Try parsing DATABASE_URL environment variable
-try:
-    database_url = os.environ.get('DATABASE_URL')
-    if database_url:
-        DATABASES['default'] = dj_database_url.parse(database_url)
-    else:
-        print("DATABASE_URL environment variable is not set or empty.")
-except Exception as e:
-    print(f"An error occurred while parsing DATABASE_URL: {e}")
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
