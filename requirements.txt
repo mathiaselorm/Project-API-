@@ -4,6 +4,7 @@ pyyaml
 requests
 django-cors-headers
 djangorestframework_simplejwt
+mysqlclient
 dj-database-url
 psycopg2
 gunicorn
