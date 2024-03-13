@@ -3,7 +3,6 @@ djangorestframework
 pyyaml
 requests
 django-cors-headers
-mysqlclient
 djangorestframework_simplejwt
 dj-database-url
 psycopg2
