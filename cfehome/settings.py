@@ -92,14 +92,7 @@ WSGI_APPLICATION = 'cfehome.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'P_api',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
