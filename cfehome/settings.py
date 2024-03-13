@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split( ',')
 
 
 # Application definition
@@ -151,5 +151,3 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
-
-#postgres://product_api_pnn3_user:c0VnShp3WlMYGbahr7t5TOHQRIDZbUgT@dpg-cnoi147sc6pc73b66bn0-a.oregon-postgres.render.com/product_api_pnn3
